@@ -1,7 +1,5 @@
 package com.caiqueferreira.cursomc.resources;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +12,7 @@ import com.caiqueferreira.cursomc.domain.Categoria;
 import com.caiqueferreira.cursomc.service.CategoriaService;
 
 @RestController
-@RequestMapping(value="/categorias/")
+@RequestMapping(value="/categorias")
 public class CategoriaResource {
     
 	@Autowired
@@ -22,7 +20,6 @@ public class CategoriaResource {
 	
 	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Integer id) {
-		
 		Categoria obj = service.buscar(id);
 		return ResponseEntity.ok().body(obj);
 	}
