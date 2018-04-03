@@ -21,7 +21,7 @@ private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String nome;
 	
-	@JsonManagedReference
+	
 	@ManyToMany(mappedBy = "categorias")
 	private List<Produto> produtos = new ArrayList<>();
   
