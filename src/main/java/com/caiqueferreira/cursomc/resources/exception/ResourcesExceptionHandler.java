@@ -2,13 +2,14 @@ package com.caiqueferreira.cursomc.resources.exception;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.hibernate.ObjectNotFoundException;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.caiqueferreira.cursomc.service.exceptions.DataIntegrityException;
+import com.caiqueferreira.cursomc.service.exceptions.ObjectNotFoundException;
 
 @ControllerAdvice
 public class ResourcesExceptionHandler {
