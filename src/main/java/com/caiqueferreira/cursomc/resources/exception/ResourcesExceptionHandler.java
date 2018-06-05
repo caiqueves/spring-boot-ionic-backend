@@ -26,7 +26,7 @@ public class ResourcesExceptionHandler {
 	public ResponseEntity<StantardError> dataIntegrity(ObjectNotFoundException e, HttpServletRequest request) {
 	 
       StantardError err = new StantardError(HttpStatus.BAD_REQUEST.value(),e.getMessage(), System.currentTimeMillis());
-	  return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
+	  return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
    }
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
@@ -36,6 +36,6 @@ public class ResourcesExceptionHandler {
       for (FieldError x : e.getBindingResult().getFieldErrors()) {
     	  err.addError(x.getField(),x.getDefaultMessage());
       }
-      return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
    }
 }
